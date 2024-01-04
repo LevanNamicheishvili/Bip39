@@ -19,7 +19,11 @@
   "author": "thorin404",
   "license": "MIT",
   "devDependencies": {
+    "@types/crypto-js": "^4.2.1",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
   }
 }

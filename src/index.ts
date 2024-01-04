@@ -31,7 +31,7 @@ function bytesToBinary(bytes: number[]): string {
 function deriveChecksumBits(entropyBuffer: number[]): string {
     const ENT = entropyBuffer.length * 8;
     const CS = ENT / 32;
-    const hash = sha256(entropyBuffer);
+    const hash = sha256(entropyBuffer.toString());
     return bytesToBinary([].slice.call(hash)).slice(0, CS);
 }
 
@@ -57,8 +57,10 @@ function validateMnemonic(mnemonic: string): boolean {
     return true;
 }
 
-function sha256(data: number[]): ArrayBuffer {
-    return new ArrayBuffer(0);
+import * as CryptoJS from "crypto-js";
+
+function sha256(data) {
+    return CryptoJS.SHA256(CryptoJS.enc.Hex.parse(data.toString('hex'))).toString(CryptoJS.enc.Hex);
 }
 
 const mnemonics12 = generateMnemonics(12, 12);

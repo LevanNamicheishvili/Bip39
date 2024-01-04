@@ -4,7 +4,10 @@ var WORDLIST = [
 function generateMnemonics(count, words) {
     var mnemonics = [];
     for (var i = 0; i < count; i++) {
-        var mnemonic = generateMnemonic(words);
+        var mnemonic;
+        do {
+            mnemonic = generateMnemonic(words);
+        } while (!validateMnemonic(mnemonic));
         mnemonics.push(mnemonic);
     }
     return mnemonics;
@@ -49,8 +52,10 @@ function validateMnemonic(mnemonic) {
         return false;
     return true;
 }
+const CryptoJS = require("crypto-js");
+
 function sha256(data) {
-    return new ArrayBuffer(0);
+    return CryptoJS.SHA256(CryptoJS.enc.Hex.parse(data.toString('hex'))).toString(CryptoJS.enc.Hex);
 }
 var mnemonics12 = generateMnemonics(12, 12);
 console.log(mnemonics12);
