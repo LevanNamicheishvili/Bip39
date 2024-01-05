@@ -59,9 +59,7 @@ function validateMnemonic(mnemonic: string): boolean {
 
 import * as CryptoJS from "crypto-js";
 
-function sha256(data) {
-    return CryptoJS.SHA256(CryptoJS.enc.Hex.parse(data.toString('hex'))).toString(CryptoJS.enc.Hex);
-}
+const sha256 = (data: string) => CryptoJS.SHA256(CryptoJS.enc.Hex.parse(data)).toString(CryptoJS.enc.Hex);
 
 const mnemonics12 = generateMnemonics(12, 12);
 console.log(mnemonics12);
