@@ -6,7 +6,8 @@
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts-resolve --minify --clean --sourcemap --legacy-output"
+    "build": "tsup src/index.ts --format cjs,esm --dts-resolve --minify --clean --sourcemap --legacy-output",
+    "watch": "tsc --watch"
   },
   "keywords": [
     "bip39",
@@ -24,6 +25,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "crypto-js": "^4.2.0"
   }
 }

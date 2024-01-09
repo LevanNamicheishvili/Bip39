@@ -1,19 +1,18 @@
 {
-    "compilerOptions": {
-      "strict": true,
-      "noImplicitAny": true,
-      "esModuleInterop": true,
-      "strictNullChecks": true,
-      "lib": ["ES2017", "DOM"],
-      "moduleResolution": "node",
-      "module": "CommonJS",
-      "declaration": true,
-      "isolatedModules": true,
-      "noEmit": true,
-      "outDir": "./dist"
-    },
-    "exclude": [
-      "node_modules"
-    ]
-  }
-  
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "lib": ["ES2017", "DOM"],
+    "moduleResolution": "node",
+    "module": "CommonJS",
+    "declaration": true,
+    "isolatedModules": true,
+    "outDir": "./dist",
+    "allowJs": false
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
